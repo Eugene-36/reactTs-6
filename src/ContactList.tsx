@@ -12,9 +12,6 @@ const ContactList = () => {
     contact.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
-  listOfContacts.map((el) => {
-    console.log('el', typeof el.id);
-  });
   return (
     <div>
       {visibleTasks?.map(({ id, name, number }: ContactListProps) => (
