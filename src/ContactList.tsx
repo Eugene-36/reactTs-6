@@ -1,7 +1,7 @@
 import Contact from './Contact.js';
 import { useAppSelector } from './redux/hooks';
-type ContactList = {
-  id: number;
+type ContactListProps = {
+  id: string;
   name: string;
   number: string;
 };
@@ -12,9 +12,12 @@ const ContactList = () => {
     contact.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  listOfContacts.map((el) => {
+    console.log('el', typeof el.id);
+  });
   return (
     <div>
-      {visibleTasks.map(({ id, name, number }: ContactList) => (
+      {visibleTasks?.map(({ id, name, number }: ContactListProps) => (
         <Contact key={id} name={name} number={number} contactId={id} />
       ))}
     </div>

@@ -3,7 +3,7 @@ import { deleteContact } from './redux/contactsSlice';
 type Props = {
   name: string;
   number: string;
-  contactId: number;
+  contactId: string;
 };
 const Contact = ({ name, number, contactId }: Props) => {
   const dispatch = useAppDispatch();
